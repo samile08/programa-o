@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Programação</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        .tab-button.active {
+            background-color: #ccc;
+        }
+
+        .video-container {
+            width: 500px;  /* Você pode mudar aqui */
+            height: 300px; /* E aqui */
+            border: 2px solid #000;
+            resize: both;
+            overflow: auto;
+            padding: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Trabalho de Programação</h1>
+        <p><strong>Nome:</strong>samile malman</p>
+        <p><strong>N°:</strong>28</p>
+        <p><strong>Série:</strong> 3°C</p>
+
+        <!-- Abas -->
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('lanches, event)">lanches</button>
+            <button class="tab-button" onclick="showTab('sanduiche', event)">sanduiche</button>
+            <button class="tab-button" onclick="showTab('video', event)">dicas</button>
+        </div>
+
+        <!-- Conteúdos das abas -->
+        <div id="shounen" class="tab-content active-tab">
+            <h2> Alimentação saudavel </h2>
+            <img src="lanches-saudaveis-doutissima-istock.jpg" alt="lanches saudaveis">
+            <p> Nosso dia a dia sempre é repleto de refeições, das principais, como café da manhã, almoço e jantar, 
+                até lanches ao decorrer do dia para espantar a fome ou "forrar" o estômago e ter energia. 
+                No entanto, na hora de comer esses lanchinhos, é normal que surjam dúvidas sobre o que consumir, qual a quantidade ideal, 
+                como preparar a melhor opção, entre outras coisas.
+                E se você tem uma alimentação balanceada e rica em componentes saudáveis, escolher opções de lanches saudáveis para tarde 
+                que se adequem à essa rotina e que te proporcionem tudo o que você precisa é ainda mais importante. </p>
+            <div class="additional-content">
+                <h3>Conceitos Importantes:</h3>
+                <p><strong>Laços de repetição:</strong> ...</p>
+                <!-- restante igual -->
+            </div>
+        </div>
+
+        <div id="Saunduiche natural" class="tab-content">
+            <h2>sanduiche natural</h2>
+            <img src="sanduiche-natural-de-frango-1024x494.webp" alt="sanduiche natural">
+            <p>Romances exploram sentimentos...</p>
+            <div class="additional-content">
+                <h3>Propriedades CSS:</h3>
+                <p><strong>Background-Color:</strong> ...</p>
+            </div>
+        </div>
+
+        <div id="docura" class="tab-content">
+            <h2>lanches saudaveis doces</h2>
+            <img src="pan alt="doces">
+            <p>Doces saudaveis...</p>
+            <div class="additional-content">
+                <h3>Outros Conceitos:</h3>
+                <p><strong>Text-Transform:</strong> ...</p>
+            </div>
+        </div>
+
+        <!-- NOVA ABA: VÍDEO -->
+        <div id="video" class="tab-content">
+            <h2>Vídeo sobre ideias de lanches saudaveis</h2>
+            <p>Abaixo está um vídeo interessante relacionado a receitas saudaveis:</p>
+            <div class="video-container">
+                <iframe src="https://youtube.com/shorts/MlCm-tRsuEo?feature=shared" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+            <p><small></small></p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId, event) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            contents.forEach(content => {
+                content.classList.remove('active-tab');
+            });
+
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active-tab');
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
