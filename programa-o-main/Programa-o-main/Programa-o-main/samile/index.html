@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Programação</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        .tab-button.active {
+            background-color: #ccc;
+        }
+
+        .video-container {
+            width: 500px;
+            height: 300px;
+            border: 2px solid #000;
+            resize: both;
+            overflow: auto;
+            padding: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Trabalho de Programação</h1>
+        <p><strong>Nome:</strong> Samile Malman</p>
+        <p><strong>N°:</strong> 28</p>
+        <p><strong>Série:</strong> 3°C</p>
+
+        <!-- Abas -->
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('agrinho', event)">Agrinho</button>
+            <button class="tab-button" onclick="showTab('redacao-parana', event)">Redação Paraná</button>
+            <button class="tab-button" onclick="showTab('campo-cidade', event)">Campo Cidade</button>
+        </div>
+
+        <!-- Conteúdos das abas -->
+        <div id="agrinho" class="tab-content active-tab">
+            <h2>Agrinho</h2>
+            <img src="agrinho.jpg" alt="agrinho">
+            <p>"Agrinho: Festejando a conexão campo e cidade" celebra a interdependência entre o meio rural e urbano, destacando a importância 
+                da agricultura sustentável, troca cultural e inovação. É uma homenagem ao ciclo que une produção e consumo, valorizando o campo nas cidades 
+                e promovendo maior respeito e conscientização. A festa simboliza a união essencial para o desenvolvimento mútuo e equilibrado.</p>
+            <div class="additional-content">
+                <h3>Conceitos Importantes:</h3>
+                <p><strong>Laços de repetição:</strong> ...</p>
+            </div>
+        </div>
+
+        <div id="redacao-parana" class="tab-content">
+            <h2>Redação Paraná</h2>
+            <img src="redação.png" alt="redação">
+            <p>A plataforma Redação Paraná foi criada para apoiar estudantes no desenvolvimento da escrita, 
+                com foco na prática de redações de gêneros diversos e temáticas atuais. Oferece ferramentas 
+                para o letramento digital e feedback contínuo dos professores. Também disponibiliza aos docentes 
+                um banco de propostas alinhadas ao currículo escolar.</p>
+            <div class="additional-content">
+                <h3>Outros temas:</h3>
+                <p><strong>Exemplos:</strong> ...</p>
+            </div>
+        </div>
+
+        <div id="campo-cidade" class="tab-content">
+            <h2>Campo Cidade</h2>
+            <img src="campocidade.webp" alt="campo cidade">
+            <p>O conceito de campo se refere ao espaço rural, ligado à agricultura e à vida comunitária, 
+            enquanto a cidade é marcada pela urbanização, complexidade e diversidade de serviços.
+            A relação entre esses dois mundos é histórica e dinâmica, refletindo desafios e oportunidades
+            de desenvolvimento social e econômico. A urbanização e a tecnologia têm diluído algumas dessas
+            fronteiras, buscando integrar práticas sustentáveis.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showTab(tabId, event) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            // Esconde todos os conteúdos
+            contents.forEach(content => {
+                content.classList.remove('active-tab');
+            });
+
+            // Remove a classe 'active' de todos os botões
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Exibe o conteúdo da aba ativa
+            document.getElementById(tabId).classList.add('active-tab');
+            
+            // Marca o botão da aba ativa como 'active'
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
